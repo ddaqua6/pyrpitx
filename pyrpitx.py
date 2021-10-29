@@ -22,6 +22,8 @@ def carrier(frq, sec): #not working now
 def fmrds(frq, audio, rds_id, rds_name, rds_text): # Wide band broadcast FM with RDS
   os.system("sudo /home/pi/rpitx/pifmrds -freq " + str(frq / 1000.0) + " -audio '" + audio + "' -pi " + str(rds_id) + " -ps '" + rds_name + "' -rt '" + rds_text + "'")
 def aprs(frq, callsign, destination, digis, msg_addressee, msg, type="message", symbolcode="[", symboltable="/", lat="", long=""): # APRS
+  # msg_addressee is used as message addressee in message type, ignored in position, object name in object
+  print("Generating AFSK WAV file...")
   def aprs_9count(call):
     length = len(call)
     dodat = 9 - length
@@ -34,4 +36,6 @@ def aprs(frq, callsign, destination, digis, msg_addressee, msg, type="message", 
     os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav ':" + msg_addressee + aprs_9count(msg_addressee) + ":" + msg + "'")
   if (type == "position"):
     os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav '=" + lat + symboltable + long + symbolcode + " " + msg + "'")
+  ## NOT WORKING if (type == "object"): 
+    #os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav ';" + msg_addressee + "*" + lat + symboltable + long + symbolcode + " " + msg + "'")
   nfm(frq, "outaprs.wav")
