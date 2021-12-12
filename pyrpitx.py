@@ -38,4 +38,6 @@ def aprs(frq, callsign, destination, digis, msg_addressee, msg, type="message", 
     os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav '=" + lat + symboltable + long + symbolcode + " " + msg + "'")
   ## NOT WORKING if (type == "object"): 
     #os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav ';" + msg_addressee + "*" + lat + symboltable + long + symbolcode + " " + msg + "'")
+  if (type == "status"):
+    os.system("sudo aprs -c " + callsign + " --destination " + destination + " -d " + digis + " -o outaprs.wav '>" + msg + "'")
   nfm(frq, "outaprs.wav")
