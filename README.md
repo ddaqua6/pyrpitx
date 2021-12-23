@@ -10,6 +10,7 @@ Please use audio in wav only. All other information about rpitx - <a href="githu
 How to install<br>
 Simply clone this git into your Raspberry and copy the pyrpitx.py into folder, in which your Python script runs. Then add "import pyrpitx" at the start of your Python script. Please note that you need to have rpitx installed in folder /home/pi/rpitx, otherwise you need to edit the pyrpitx.py.<br>
 <br>Requirements installation<br>
+python-dev: sudo apt install python-dev<br>
 afsk: pip install afsk (for APRS)<br>
 rpitx: Please see F5OEO's rpitx git for info, install into /home/pi/rpitx. (Software for transmitting)<br>
 sox: sudo apt install sox (WAV file processor)<br>
