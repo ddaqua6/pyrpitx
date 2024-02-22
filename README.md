@@ -1,5 +1,7 @@
 # pyrpitx
-<b>Python library for RPiTX</b><br>
+<b>Python library for RPiTX</b><br><br>
+<i>This is very simple library I originally developed just for my private usage to speed up the process of controlling RPiTX with Python. Please don't expect anything special from this code, its only purpose is to save a few lines of code when using RPiTX with Python (using os.system).</i>
+<br><br>
 This library simplifies transmitting signals by Python scripts, simply import this library (pyrpitx.py) to your code and use the pre-defined functions to command rpitx.<br><br>
 Requires rpitx by F5OEO, sox.<br>Required Python packages: afsk, os, time. <br><b>Also requires to have rpitx version 1 in /home/pi/rpitx-1 because of pifm not being present in v2. Please install also the old version of rpitx (v1) to /home/pi/rpitx-1</b><br>
 The code directs commands for rpitx to /home/pi/rpitx, if you have rpitx in different folder, please edit the pyrpitx.py file.<br><br>
